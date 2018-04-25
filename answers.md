@@ -6,7 +6,7 @@ Answer: The first stage is compilation/hoisting and the second stage is interpre
 
   - For example, identify the high level steps in a line by line overview and then define what each of those steps are accomplishing.
 
-Answer: During the compilation/hoisting phase in the global scope, it runs through and sees the delaration of a variable `foo` and a function `bar`. These are hoisted to the top and not assigned values at this point. It looks in the function bar and hoists a new variable foo and a function baz. It then looks in baz and sees a new variable bam (which I think is actually then attached to the window or global scope because it is not declared).
+Answer: During the compilation/hoisting phase in the global scope, it runs through and sees the delaration of a variable `foo` and a function `bar`. These are hoisted to the top and not assigned values at this point. It looks in the function bar and hoists a new variable foo and a function baz. It then looks in baz and as I understand does not hoist `bam` because it is not declared (I believe it does get hoisted to the window or global scope when it is assigned).
 
 3. Write an explanation, using as much space as you need, relating to how the second stage of execution for this file operates.
 
@@ -33,7 +33,7 @@ Answer: When `baz()` is invoked without an argument, `foo` references the most l
 
 6. Which scope, if any, will the variable bam on line 11 be registered to when the first stage of execution occurs on this file? Provide a brief description in your own words to support your conclusion.
 
-Answer: It will not be registered on the first stage of execution because it is not declared. Since it's never declared it's never hoisted inside the function where it appears.
+Answer: It will not be registered on the first stage of execution because it is not declared. Since it's never declared it's not hoisted inside the function where it appears.
 
 7. For each line, 16 through 19, what is the return value for each?
 
